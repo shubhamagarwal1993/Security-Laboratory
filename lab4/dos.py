@@ -15,7 +15,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 #s.connect((IPADDR, PORTNUM))
  
 # send the command
-for i in range(1100)
+for i in range(1100):
 	s.sendto(PACKETDATA, (IPADDR, PORTNUM))
  
 # close the socket
