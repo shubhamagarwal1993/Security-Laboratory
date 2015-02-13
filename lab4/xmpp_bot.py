@@ -34,12 +34,12 @@ class Bot:
         pass
 
     def xmpp_connect(self):
-        con=self.jabber.connect()
+        con=self.jabber.connect(('54.191.94.255','5222'),None,None)
         if not con:
             sys.stderr.write('could not connect!\n')
             return False
         sys.stderr.write('connected with %s\n'%con)
-        auth=self.jabber.auth(jid.getNode(),jidparams['password'],resource=jid.getResource())
+        auth=self.jabber.auth(jid.getNode(),jidparams['password'],resource='crappy_script')
         if not auth:
             sys.stderr.write('could not authenticate!\n')
             return False
@@ -50,12 +50,13 @@ class Bot:
 if __name__ == '__main__':
 
     #PROBABLY SHOULD CHANGE THIS, EH?
-    jidparams={'jid': 'slave@jabber.no-sense.net', 'password': 'Ntl54mopM3mFci9V39aMwlSHkQxxWr'}
+    jidparams={'jid': 'netid@54.191.94.255', 'password': 'hack_the_planet'}
     
     jid=xmpp.protocol.JID(jidparams['jid'])
-    cl=xmpp.Client(jid.getDomain(),debug=[])
+    cl=xmpp.Client('54.191.94.255',debug=[])
+    print jid.getDomain()
     
-    bot=Bot(cl,'slave@jabber.no-sense.net')
+    bot=Bot(cl,'netid@54.191.94.255')
 
     if not bot.xmpp_connect():
         sys.stderr.write("Could not connect to server, or password mismatch!\n")
@@ -72,7 +73,6 @@ if __name__ == '__main__':
     #Authorize makes it so the Bot "accepts your friend request"
     #myRoster.Subscribe('master@jabber.no-sense.net')
     #myRoster.Authorize('master@jabber.no-sense.net')
-    cl.send(Message('slave@jabber.no-sense.net','Slave Connected to Master'))
     online = 1
 
     while online:
