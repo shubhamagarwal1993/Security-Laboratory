@@ -50,13 +50,13 @@ class Bot:
 if __name__ == '__main__':
 
     #PROBABLY SHOULD CHANGE THIS, EH?
-    jidparams={'jid': 'netid@54.191.94.255', 'password': 'hack_the_planet'}
+    jidparams={'jid': 'sagarwl4@54.191.94.255', 'TwgZ3RJ9T': 'hack_the_planet'}
     
     jid=xmpp.protocol.JID(jidparams['jid'])
     cl=xmpp.Client('54.191.94.255',debug=[])
     print jid.getDomain()
     
-    bot=Bot(cl,'netid@54.191.94.255')
+    bot=Bot(cl,'bot_sagarl4@54.191.94.255')
 
     if not bot.xmpp_connect():
         sys.stderr.write("Could not connect to server, or password mismatch!\n")
