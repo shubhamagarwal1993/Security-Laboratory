@@ -31,7 +31,6 @@ class Bot:
         #I believe this is for sending files over xmpp
         m = xmpp.protocol.Message(to=self.remotejid,body=message,typ='chat')
         self.jabber.send(m)
-        pass
 
     def xmpp_connect(self):
         con=self.jabber.connect(('54.191.94.255','5222'),None,None)
@@ -50,13 +49,13 @@ class Bot:
 if __name__ == '__main__':
 
     #PROBABLY SHOULD CHANGE THIS, EH?
-    jidparams={'jid': 'sagarwl4@54.191.94.255', 'TwgZ3RJ9T': 'hack_the_planet'}
+    jidparams={'jid': 'bot_sagarwl4@54.191.94.255', 'password': 'DA2tSUDU7'}
     
     jid=xmpp.protocol.JID(jidparams['jid'])
     cl=xmpp.Client('54.191.94.255',debug=[])
     print jid.getDomain()
     
-    bot=Bot(cl,'bot_sagarl4@54.191.94.255')
+    bot=Bot(cl,'bot_sagarwl4@54.191.94.255')
 
     if not bot.xmpp_connect():
         sys.stderr.write("Could not connect to server, or password mismatch!\n")
@@ -71,9 +70,11 @@ if __name__ == '__main__':
     #Register yourself so you can talk to your master... not necessary every time you run, but necessary the first time you run
     #Each side of the conversation needs to "friend" each other. Subscribe makes it so the bot "friend requests" you.
     #Authorize makes it so the Bot "accepts your friend request"
-    #myRoster.Subscribe('master@jabber.no-sense.net')
-    #myRoster.Authorize('master@jabber.no-sense.net')
-    online = 1
+    myRoster.Subscribe('sagarwl4@54.191.94.255')
+    myRoster.Authorize('sagarwl4@54.191.94.255')
+    online = 0
+    #bot.xmpp_connect()
+    bot.stdio_message("hihi")
 
     while online:
         (i , o, e) = select.select(socketlist.keys(),[],[],1)
