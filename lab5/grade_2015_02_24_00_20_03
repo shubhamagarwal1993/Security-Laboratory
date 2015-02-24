@@ -1,0 +1,84 @@
+bug, n:
+	An elusive creature living in a program that makes it incorrect.
+	The activity of "debugging", or removing bugs from a program, ends
+	when people get tired of doing it, not when the bugs are removed.
+		-- "Datamation", January 15, 1984
+
+TIME GRADED: 00:20:03 2015-02-24
+
+
+LAB 5 PART 1:
+Your flag is: https://www.youtube.com/watch?v=bLlj_GeKniA
+That is correct
+
+LAB 5 PART 2:
+
+
+DOM Injection:
+                                          Completed
+
+Password Strength:
+                                          Completed
+
+Forgot Password:
+                                          Completed
+
+XSS Stage 1:
+                                          Not Completed
+
+Stored XSS:
+                                          Not Completed
+
+Reflected XSS:
+                                          Not Completed
+
+CSRF:
+                                          Not Completed
+
+CSRF Prompt By Pass:
+                                          Not Completed
+
+CSRF Token By Pass:
+                                          Not Completed
+
+Fail Open Authentication Scheme:
+                                          Completed
+
+Numeric SQL Injection:
+                                          Completed
+
+XPATH Injection:
+                                          Completed
+
+SQL String Injection:
+                                          Completed
+
+Blind SQL String Injection:
+                                          Completed
+
+DoS (Zip Bomb):
+                                          Not Completed
+
+DoS Multiple Logins:
+                                          Completed
+
+Forced Browsing:
+                                          Completed
+
+Encoding:
+                                          Completed
+
+By Pass HTML Field Restrictions:
+                                          Not Completed
+
+Exploit Hidden Fields:
+                                          Not Completed
+
+Exploit Unchecked Email:
+                                          Not Completed
+
+Javascript Validation:
+                                          Not Completed
+FINAL GRADE:
+100 * (.33 * 1/1 + .66 * 11/22) = 66.6666666667
+
