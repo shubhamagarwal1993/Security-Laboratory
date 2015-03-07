@@ -1,1 +1,2 @@
-# Put the IP addresses here: delete this line, put ubuntu on the first line and the windows ip on the second.
+192.168.101.231
+192.168.101.235
